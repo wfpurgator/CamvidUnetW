@@ -15,4 +15,4 @@ predict.py ： 预测、图像显示相关
 
 
 2023.9.9 重大bug：loaddata文件中cv2openimg函数 使用了cv2.reshape，这将导致复原的图像非原图、训练结果出现重大问题
-                  应修改为img.transpose(2,0,1)
+                  应修改为img.transpose(2,0,1) (已修改)

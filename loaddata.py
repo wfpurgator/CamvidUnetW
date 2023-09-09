@@ -50,8 +50,10 @@ def Cv2ImgOpen(fn,fn2,size=size0):
     mask = cv2.imread(str(fn2), 0)
     image = cv2.resize(image, (size,size))
     mask = cv2.resize(mask, (size,size))
-    image = image.reshape(3, size,size)
-    mask = mask.reshape(1, size,size)
+    #image = image.reshape(3, size,size)
+    #mask = mask.reshape(1, size,size)
+    image=image.transpose(2,0,1)
+    mask=np.expand_dims(mask,0)
 
     return image,mask
 
